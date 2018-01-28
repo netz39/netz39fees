@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    image: netz39fees
+    command: ["bin/deploy"]
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres

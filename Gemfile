@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '~> 3.2', '>= 3.2.22.5'
 
 group :development do
   gem 'wirble'
@@ -12,6 +12,7 @@ end
 
 group :production do
   gem 'pg', '~> 0.18.4'
+  gem 'unicorn'
 end
 
 group :assets do
@@ -26,6 +27,5 @@ gem 'jquery-rails'
 gem 'bootstrap_form', '~> 0.2.3'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'thin'
 
 gem 'sepa_king'
