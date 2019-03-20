@@ -5,10 +5,23 @@ services:
     build: .
     image: netz39fees
     command: ["bin/deploy"]
+    restart: unless-stopped
     ports:
       - "3000:3000"
     depends_on:
       - db
 
+    env_file:
+      - .env
+
+    environment:
+      - POSTGRES_HOST=db
+
   db:
     image: postgres
+    restart: unless-stopped
+    env_file:
+      - .env
+
+    volumes:
+      - "${DATABASE_STORAGE_LOCATION}:/var/lib/postgresql/data"

@@ -3,4 +3,4 @@ set -e
 
 bundle exec rake db:migrate
 
-exec bundle exec unicorn_rails -c config/unicorn.rb -E production -p 3000
+exec bundle exec unicorn_rails -c config/unicorn.rb -E ${RAILS_ENV} -p 3000
