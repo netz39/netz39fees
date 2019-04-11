@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: '<%= ENV['POSTGRES_DB'] %>'
+  encoding: unicode
+  host: '<%= ENV['POSTGRES_HOST'] %>'
+  username: '<%= ENV['POSTGRES_USER'] %>'
+  password: '<%= ENV['POSTGRES_PASSWORD'] %>'
   pool: 5
   timeout: 5000
