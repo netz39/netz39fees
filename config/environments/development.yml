@@ -1,0 +1,9 @@
+secret_token: '<%= ENV.fetch('SECRET_TOKEN') { "6893beb52abd6a96631251f0e7312d0444db5923" } %>'
+
+development:
+  mailer_host: '<%= ENV.fetch('MAILER_HOST', "localhost:3000") %>'
+  mailer_from: '<%= ENV.fetch('MAILER_FROM', "root@localhost") %>'
+  mailer_notify: '<%= ENV.fetch('MAILER_NOTIFY', "root@localhost") %>'
+  sepa_name: '<%= ENV.fetch('SEPA_NAME', "Netz39 e.V.") %>' #Name of the initiating party and creditor, in German: "Auftraggeber", String, max. 70 char
+  sepa_iban: '<%= ENV.fetch('SEPA_IBAN', "DE87200500001234567890") %>' #International Bank Account Number of the creditor. String, max. 34 chars
+  sepa_creditor_identifier: '<%= ENV.fetch('SEPA_CREDITOR_IDENTIFIER', "DE98ZZZ09999999999") %>' #Creditor Identifier, in German: Gläubiger-Identifikationsnummer. String, max. 35 chars
