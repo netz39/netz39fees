@@ -13,4 +13,4 @@ COPY Gemfile* /app/
 RUN bundle install --deployment --without development test
 
 COPY . /app
-RUN bundle exec rake assets:precompile
+RUN WITHOUT_APPLICATION_SETTINGS=true bundle exec rake assets:precompile
