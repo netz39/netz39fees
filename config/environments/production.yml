@@ -1,0 +1,12 @@
+secret_token: '<%= ENV.fetch('SECRET_TOKEN') { raise "Missing SECRET_TOKEN environment variable" } %>'
+
+production:
+  # host used as base for hyperlinks in emails, e.g. fees.netz39.de
+  mailer_host: '<%= ENV.fetch('MAILER_HOST') { raise "Missing MAILER_HOST environment variable" } %>'
+  # protocol for hyperlinks in emails. Either http or https
+  mailer_protocol: '<%= ENV.fetch('MAILER_PROTOCOL') { raise "Missing MAILER_PROTOCOL environment variable" } %>'
+  mailer_from: '<%= ENV.fetch('MAILER_FROM') { raise "Missing MAILER_FROM environment variable" } %>'
+  mailer_notify: '<%= ENV.fetch('MAILER_NOTIFY') { raise "Missing MAILER_NOTIFY environment variable" } %>'
+  sepa_name: '<%= ENV.fetch('SEPA_NAME') { raise "Missing SEPA_NAME environment variable" } %>'
+  sepa_iban: '<%= ENV.fetch('SEPA_IBAN') { raise "Missing SEPA_IBAN environment variable" } %>'
+  sepa_creditor_identifier: '<%= ENV.fetch('SEPA_CREDITOR_IDENTIFIER') { raise "Missing SEPA_CREDITOR_IDENTIFIER environment variable" } %>'
